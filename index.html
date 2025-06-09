@@ -18,7 +18,7 @@
   If <span style="color:#f00;font-weight:bolder">not</span>, close this page. If <span style="color:#0f0;font-weight:bolder">yes</span>, click the link.
   <script>
     const link = decodeURIComponent(window.location.search.slice(1))
-    document.outerHTML.replace('{link}', `<a href="${link}"target="_self">${link}</a>`);
+    document.innerHTML = document.innerHTML.replace('{link}', `<a href="${link}"target="_self">${link}</a>`);
   </script>
 </body>
 </html>
