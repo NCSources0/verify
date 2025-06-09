@@ -14,10 +14,11 @@
   </style>
 </head>
 <body>
-  The previous page is trying to send you to "<link/>," does it look legit?<br>
+  The previous page is trying to send you to "{link}," does it look legit?<br>
   If <span style="color:#f00;font-weight:bolder">not</span>, close this page. If <span style="color:#0f0;font-weight:bolder">yes</span>, click the link.
   <script>
-    document.querySelector("link").outerHTML = `<a href="${decodeURIComponent(window.location.search.slice(1))}">${decodeURIComponent(window.location.search.slice(1))}</a>`;
+    const link = decodeURIComponent(window.location.search.slice(1))
+    document.outerHTML.replace('{link}', `<a href="${link}"target="_self">${link}</a>`);
   </script>
 </body>
 </html>
